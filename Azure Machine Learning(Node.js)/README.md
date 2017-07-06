@@ -31,112 +31,101 @@ Azure Machine Learning を導入する最初のステップは、ML ワークス
  アカウントを使用してログインします。
 2.	[+ New]、[Intelligence + analytics]、[Machine Learning Webサービス],[ワークスペースの表示].[追加] の順にクリックします。
 
-![1]()
+![1](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/1.png)
 ML ワークスペースの作成
-![2]()
+![2](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/2.png)
 ワークスペースの表示
-![3]()
+![3](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/3.png)
 追加画面
 3.	[Machine Learning ワークスペース] ブレードで、"DXLabs" などのワークスペース名を入力し、緑色のチェック マークがその横に表示されることを確認します。[Resource group] の [Create new] をクリックして、"DXLabsResourceGroup" などのリソース グループ名を入力します (二重引用符は付けません)。[Location] で、最も近くの場所を選択します。次に、ストレージ アカウント名を入力して、ここでもその横に緑色のチェック マークが表示されることを確認します。
 ストレージ アカウント名は、3 ～ 24 文字の長さで、数字と小文字のみを使用でき、Azure 内で一意である必要があります。名前の横の緑色のチェック マークは、これらの条件を満たしていることを表します。
-![4]()
+![4](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/4.png)
 MLワークスペースの構成
 4.	[Web サービス プラン価格レベル] をクリックして、[DEVTEST 標準] を選択します。 [Machine Learningワークスペース] ブレードの下部にある [ダッシュボードにピン留めする] をオンにし、[Create] ボタンをクリックして完了します。
-![5]()
+![5](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/5.png)
 価格レベルの選択
 5.	通常、新しい ML ワークスペースの作成には 30 秒ほどかかります。展開が完了したら、[Launch Machine Learning Studio の起動] をクリックします (次に示した画面が自動的に表示されない場合は、ダッシュボードで ML ワークスペース用に作成されているタイルをクリックして、表示します)。
-![6]()
+![6](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/6.png)
 ML Studio の起動
 6.	[Sign in here] をクリックし、Microsoft アカウントを使用して ML Studio にサインインします。
-![7]()
+![7](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/7.png)
 ML Studio へのサインイン
 7.	ML Studio で、左下隅にある [+ NEW] をクリックします。[Blank Experiment] をクリックして、新しい実験を開始します。
-![8]()
+![8](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/8.png)
 空の実験の作成
 8.	ページ上部にある実験のタイトル ("Experiment created on...") をクリックし、"Digit Recognition" などの新しい実験名を入力します。
-![9]()
+![9](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/9.png)
 これで、実験が作成されました。次のステップでは、データをインポートし、それに基づいてモデルを構築します。
 # 演習 2: データセットをアップロードする
 Azure Machine Learning Studio には、サンプルのデータセットがいくつか同梱されています。追加のデータセットは、Data.gov、Kaggle、カリフォルニア大学アーバイン校の Machine Learning Repository など、さまざまなソースから入手可能です。この演習では、43 名分の手書きの数字 (0 ～ 9) をスキャンしてデジタル化することにより生成したデータが含まれるパブリック データセットをアップロードします。後でこのデータセットを使用して、高い精度で手書きの数字を認識できる ML モデルのトレーニングを行います。
 1.	ML Studio の左下隅にある [+ NEW] をクリックします。[DATASET]、[FROM LOCAL FILE] の順にクリックします。
-![10]()
+![10](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/10.png)
 データセットの新規作成
 2.	[ファイルを選択] ボタンをクリックします。このラボの resources サブディレクトリに移動して、digit-recognition.csv という名前のファイルを選択します。[SELECT A TYPE FOR THE NEW DATASET] で "Generic CSV File with a header (.csv)" が選択されていることを確認します。オプションで、[ENTER A NAME FOR THE NEW DATASET] ボックスに、データセットのフレンドリ名を入力し、右下隅にあるチェック マークをクリックして、データセットのアップロードを開始します。
-![11]()
+![11](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/11.png)
 データセットのアップロード
 3.	アップロードが完了するのを待ちます。左側にあるモジュール パレットに移動し、[Saved Datasets] の [My Datasets] の下に、アップロードしたデータセットが表示されていることを確認します.
-![12]()
+![12](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/12.png)
 Datasetsの確認画面
-![13]()
+![13](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/13.png)
 アップロードしたデータセット
 6.	モジュール パレットからキャンバス (右側の灰色の領域) に、データセットをドラッグ アンド ドロップします。
-![14]()
+![14](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/14.png)
 モデルへのデータセットの追加
 7.	データセットがどのようになっているかを確認するために、データセットの下部にある出力ポート (丸の中に 1 があるもの) をクリックして、[Visualize] を選択します。
-![15]()
+![15](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/15.png)
 データセットの視覚化
 8.	データセットでは、変数、つまり "フィーチャー" は、列として表示され、各行が、0 ～ 9 の数字を表します。データセットには、3,823 行と 65 列が含まれています。最初の 64 列には、4 × 4 ブロックのピクセルを表す 0 ～ 16 の値が含まれています。データセットに表されている各数字は、32 × 32 配列にスキャンされたもので、1 つの数字あたり、合計 1,024 個のピクセルになります。データセットでは各スキャンは 64 個の値で表され、それぞれの値が 16 ピクセルを表します。
-![16]()
+![16](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/16.png)
 数字認識データセット
 9.	"digit" という名前の最後の列が表示されるまで、右にスクロールします。この列内のそれぞれの値が、同じ行内のピクセル データに対応する数字です。これが、ほかの 64 列の値を考慮して、モデルによって予測されるターゲット値です。
-![17]()
+![17](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/17.png)
 ターゲットの変数
 右上隅にある [x] をクリックして、視覚化ウィンドウを終了します。データがロードされます。これを使用して、次の演習を行います。
 ## 演習 3: 分類モデルのトレーニングを行う
 この演習では、ML Studio のドラッグ アンド ドロップ ユーザー インターフェイスを使用して、ML モデルのトレーニングを行います。トレーニングでは、いずれかの機械学習アルゴリズムを選択して、モデルにデータを取り込みます。トレーニングの間に、コンピューターでは、今後の入力からの値を予測するときに使用できるデータのパターンが検索されます。
 機械学習モデルには、いくつかの種類があります。最も一般的な種類の 1 つが、回帰モデルです。このモデルでは、多数ある回帰アルゴリズムの 1 つを使用して、数値を生成します。たとえば、人の年齢や、クレジットカード トランザクションが不正である確率などです。ここでは、分類モデルのトレーニングを行います。この種類のモデルでは、一連の入力を一連の既知の出力の 1 つに解決できるようにします。分類モデルの典型的な例として、電子メールを調査して、"スパム" または "非スパム" に分類する処理があります。ここでは、モデルを使用して、ピクセル パターンを表す一連の入力を調査し、それぞれを 0 ～ 9 までの数字に分類してみます。
 1.	モジュール パレットの上部にある検索ボックスに「metadata」と入力して (かぎかっこは付けません)、[Edit Metadata] モジュールを検索します。
-![18]()
+![18](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/18.png)
 [Edit Metadata]モジュールの検索
 2.	このモジュールを実験キャンバスにドラッグして、データセットの下にドロップします。次に、データセットの出力ポートから出ている下向き矢印をドラッグして、出力ポートを [Edit Metadata] モジュールの入力ポートに接続します。[Edit Metadata] モジュールを使用すると、特に、データセット内の列のデータの種類を指定できるようになります。
-![19]()
+![19](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/19.png)
 [Edit Metadata] モジュールの追加
 Azure ML Studio で理解しておくべき主要概念の 1 つが、ポートとコネクタの概念です。このステップでは、データセットの出力ポートを [Edit Metadata] モジュールの入力ポートに接続しました。コネクタを介して、1 つのモジュールから次のモジュールにデータが流れます。モジュールによっては、複数の入力および出力をサポートするため、複数の入力ポートと出力ポートを持つものもあります。ポートの機能を知りたい場合は、ポートの上にカーソルを置くと、ヒントがポップアップ表示されます。より詳しい情報が必要な場合は、モジュールを右クリックして、表示されるポップアップ メニューから [Help] を選択します。
 3.	[Edit Metadata] モジュールをクリックして、選択します (選択すると、ボールドの青い枠で囲まれます)。右側の [Properties] ペインにある [Launch column selector] ボタンをクリックします。
-![20]()
+![20](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/20.png)
 列セレクターの起動
 4.	[AVAILABLE COLUMNS] の一覧の最下部までスクロールして、[digit] をクリックします。[>] ボタンをクリックして、[digit] を [SELECTED COLUMNS] の一覧に移動します。[digit] は、モデルが予測する値であることを思い出してください。ウィンドウの右下隅にあるチェック マークをクリックして、完了します。
-![21]()
+![21](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/21.png)
 [digit] 列の選択
 5.	[Properties] ペインで、[Categorical] という名前のドロップダウン リストから [Make Categorical] を選択します。これにより、[digit] 列内の値を離散型 (7.5 や 8.6 などの値をとることができる数値に対立するもの) として扱うようモデルに指示されます。
-![22]()
+![22](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/22.png)
 [digit] 列をカテゴリ別として指定
 6.	ページ下部の [SAVE] ボタンをクリックして、実験を保存します。
-![23]()
+![23](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/23.png)
 実験の保存
 Azure Machine Learning Studio を使用して作業する場合、こまめに実験を保存するようにし、特にモデルを実行する前には忘れずに保存してください。そうすれば、問題が発生した場合でも、作業をやり直す必要がありません。また、先に実験を保存しないでブラウザーの [Back] ボタンをクリックすると、作業が失われる可能性があることにも注意してください。
 7.	モジュール パレットの最上部にある検索ボックスに「split」 (かぎかっこは付けません) と入力します。キャンバスに [Split Data] モジュールをドラッグし、[Edit Metadata] モジュールの出力ポートを [Split Data] モジュールの入力ポートに接続します。[Split Data] モジュールの目的は、データセットを 2 つの部分に分割することで、1 つがトレーニング用、もう 1 つがスコア付け用です。[Split Data] モジュールは、トレーニング用とスコア付け用に個別のデータセットがない場合に有用です。
-![24]()
+![24](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/24.png)
 [Split Data] モジュールの追加
 8.	[Split Data] モジュールが選択されていることを確認します。次に、右側の [Properties] ペインに移動して、分割を 0.8 に設定します。行の 80% をモデルのトレーニングに使用し、残りの 20% をモデルのスコア付けに使用します。[Randomized split] チェック ボックスがオンになっていることも確認します。これは、特に、順序付けされているデータを分割するときに重要です。
-![25]()
+![25](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/25.png)
 分割の割合の設定
 9.	ページ下部の [SAVE] ボタンをクリックして、実験を保存します。
 10.	ページ下部の [RUN] ボタンをクリックして、実験を実行します。
 11.	次に、モジュール パレットの最上部にある検索ボックスに「train model」 (かぎかっこは付けません) と入力します。[Train Model] モジュールを見つけて、キャンバスにドラッグします。[Split Data] モジュールの左の出力を [Train Model] モジュールの右の入力に接続します。
-![26]()
+![26](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/26.png)
 [Train Model] モジュールの追加
 12.	次のステップはきわめて重要です。このステップでは、[Train Model] モジュールで予測することになる値を指定します。[Properties] ペインで [Train Model] モジュールを選択して、[Launch column selector] をクリックします。
 ![27]()
 列セレクターの起動
 13.	「digit」 (かぎかっこは付けません) と入力して、[digit] 列を選択します。これが、モデルが予測することになる値です。右下隅にあるチェック マークをクリックして、完了します。
-![28]()
+![28](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/28.png)
 ターゲット値の指定
 14.	次に、学習アルゴリズムを選択します。Azure Machine Learning では、数種類の分類アルゴリズムと回帰アルゴリズムが提供されており、そこから選択することができます。また、他の種類のアルゴリズムも提供されています。それぞれのアルゴリズムが、モジュール パレットでモジュールとして表されます。いつでも、R または Python で独自のアルゴリズムをコーディングすることもできます。ここでは、モデルに "Multiclass Logistic Regression" として知られているアルゴリズムを採用します。これは、分類アルゴリズムの 1 つで、結果の確率を予測するために統計でよく使用されているロジスティック回帰が適用されます。
 Azure Machine Learning チームは、お客様がモデルの意図した目的に基づいて、どのアルゴリズムを選択すべきか判断できるように、"チート シート" を作成しています。チート シートは、こちらからダウンロードできます。
 モジュール パレットの最上部にある検索ボックスに「multiclass」 (かぎかっこは付けません) と入力します。[Multiclass Logistic Regression] モジュールを見つけて、キャンバスにドラッグします。次に示しているように、[Multiclass Logistic Regression] モジュールの出力を [Train Model] モジュールの左の入力に接続します。
 ![29]()
-[Train Model] モジュールの追加
-12.	次のステップはきわめて重要です。このステップでは、[Train Model] モジュールで予測することになる値を指定します。[Properties] ペインで [Train Model] モジュールを選択して、[Launch column selector] をクリックします。
-![30]()
-列セレクターの起動
-13.	「digit」 (かぎかっこは付けません) と入力して、[digit] 列を選択します。これが、モデルが予測することになる値です。右下隅にあるチェック マークをクリックして、完了します。
-![31]()
-ターゲット値の指定
-14.	次に、学習アルゴリズムを選択します。Azure Machine Learning では、数種類の分類アルゴリズムと回帰アルゴリズムが提供されており、そこから選択することができます。また、他の種類のアルゴリズムも提供されています。それぞれのアルゴリズムが、モジュール パレットでモジュールとして表されます。いつでも、R または Python で独自のアルゴリズムをコーディングすることもできます。ここでは、モデルに "Multiclass Logistic Regression" として知られているアルゴリズムを採用します。これは、分類アルゴリズムの 1 つで、結果の確率を予測するために統計でよく使用されているロジスティック回帰が適用されます。
-Azure Machine Learning チームは、お客様がモデルの意図した目的に基づいて、どのアルゴリズムを選択すべきか判断できるように、"チート シート" を作成しています。チート シートは、こちらからダウンロードできます。
-モジュール パレットの最上部にある検索ボックスに「multiclass」 (かぎかっこは付けません) と入力します。[Multiclass Logistic Regression] モジュールを見つけて、キャンバスにドラッグします。次に示しているように、[Multiclass Logistic Regression] モジュールの出力を [Train Model] モジュールの左の入力に接続します。
-![32]()
 学習アルゴリズムの指定
 15.	[SAVE] ボタンをクリックして、実験を保存します。
 16.	[RUN] ボタンをクリックして、モデルを実行します。すべてのモジュールに、正常に実行されたことを示す緑色のチェック マークが表示されるまで待ちます。
