@@ -117,7 +117,7 @@ Azure Machine Learning Studio を使用して作業する場合、こまめに�
 ![26](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/26.png)
 [Train Model] モジュールの追加
 12.	次のステップはきわめて重要です。このステップでは、[Train Model] モジュールで予測することになる値を指定します。[Properties] ペインで [Train Model] モジュールを選択して、[Launch column selector] をクリックします。
-![27]()
+![27](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/27.png)
 列セレクターの起動
 13.	「digit」 (かぎかっこは付けません) と入力して、[digit] 列を選択します。これが、モデルが予測することになる値です。右下隅にあるチェック マークをクリックして、完了します。
 ![28](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/28.png)
@@ -125,7 +125,7 @@ Azure Machine Learning Studio を使用して作業する場合、こまめに�
 14.	次に、学習アルゴリズムを選択します。Azure Machine Learning では、数種類の分類アルゴリズムと回帰アルゴリズムが提供されており、そこから選択することができます。また、他の種類のアルゴリズムも提供されています。それぞれのアルゴリズムが、モジュール パレットでモジュールとして表されます。いつでも、R または Python で独自のアルゴリズムをコーディングすることもできます。ここでは、モデルに "Multiclass Logistic Regression" として知られているアルゴリズムを採用します。これは、分類アルゴリズムの 1 つで、結果の確率を予測するために統計でよく使用されているロジスティック回帰が適用されます。
 Azure Machine Learning チームは、お客様がモデルの意図した目的に基づいて、どのアルゴリズムを選択すべきか判断できるように、"チート シート" を作成しています。チート シートは、こちらからダウンロードできます。
 モジュール パレットの最上部にある検索ボックスに「multiclass」 (かぎかっこは付けません) と入力します。[Multiclass Logistic Regression] モジュールを見つけて、キャンバスにドラッグします。次に示しているように、[Multiclass Logistic Regression] モジュールの出力を [Train Model] モジュールの左の入力に接続します。
-![29]()
+![29](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/29.png)
 学習アルゴリズムの指定
 15.	[SAVE] ボタンをクリックして、実験を保存します。
 16.	[RUN] ボタンをクリックして、モデルを実行します。すべてのモジュールに、正常に実行されたことを示す緑色のチェック マークが表示されるまで待ちます。
@@ -134,20 +134,20 @@ Azure Machine Learning チームは、お客様がモデルの意図した目的
 演習 4: モデルにスコアを付ける
 この演習では、前の演習でトレーニングを行ったモデルにスコアを付けます。"スコア付け" によって、モデルのトレーニングがどれほどうまく行われたかが判断されます。つまり、モデルが、提示された変数からターゲット値をどれほど正確に予測するかということです。ML Studio では、スコア付けのプロセスがきわめて簡単になります。アップロードしたデータセットの 80% をモデルのトレーニングに使用しました。残りの 20% をモデルのスコア付けに使用します。
 1.	キャンバスに [Score Model] モジュールを追加します。[Train Model] モジュールの出力を [Score Model] モジュールの左の入力ポートに接続します。次に、[Split Data] モジュールの右の出力ポートを [Score Model] モジュールの右の入力に接続します。この接続は、トレーニングには使用されなかった 20% のデータを表します。
-![33]()
+![33](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/33.png)
 [Score Model] モジュールの追加
 2.	[SAVE] ボタンをクリックして、実験を保存します。
 3.	[RUN] ボタンをクリックして、実験を実行します。
 4.	実行が完了したら、[Score Model] モジュールの出力ポートを右クリックして、[Visualize] を選択します。右にスクロールします。[digit] というラベルが付いている列に、[Score Model] モジュールに渡された 20% のデータセットの実際の値が表示されています。横の、[Scored Probabilities for Class X] という名前の 10 列は、モデルが左の入力値を使用して、可能な 10 個の出力値 (数字 0 ～ 9) をどのようにスコア付けしたかを示しています。数値が高い方が、一致の可能性が高くなります。最終列の [Scored Labels] は、入力値からモデルが予測した数字を示しており、これは、最も高い確率であるとスコア付けされた数字です。[digit] 列の値と [Scored Labels] の値とを比較することによって、モデルの正確性を評価できます。簡単な検査により、モデルがほとんど常に正しく機能していることが明らかになります。
-![34]()
+![34](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/34.png)
 スコア付けしたデータセット
 5.	右上隅にある [x] をクリックして、視覚化ウィンドウを終了します。
 6.	数百もの値を手動で比較する必要はなく、結果の品質を評価するには、[Evaluate Model] モジュールを実験キャンバスに追加します。[Score Model] モジュールの出力ポートを [Evaluate Model] モジュールの左の入力ポートに接続します ([Evaluate Model] は 2 つのモデルの比較に使用することがあるため、入力ポートが 2 つあります)。
-![35]()
+![35](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/35.png)
 [Evaluate Model] モジュールの追加
 7.	[Save] をクリックして、実験を保存します。[RUN] ボタンをクリックして、もう一度実験を実行します。
 8.	[Evaluate Model] モジュールの出力ポートをクリックして、メニューから [Visualize] を選択します。[Overall accuracy] および [Average accuracy] の数値から、モデルがうまく機能していることがわかります。手書きの数字のデジタル化スキャンの場合、97% を超える高い確率で、数字を正しく識別できます。
-![36]()
+![36](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/36.png)
 評価の結果
 9.	右上隅にある [x] をクリックして、視覚化ウィンドウを終了します。
 これで、モデルの構築とテストが完了し、次は実行に移ります。最終的な目標は、PC またはモバイル デバイスで動作し、クラウドまでつながって、モデルを実行するアプリを作成することです。これを簡単にするには、モデルを Web サービスとして展開する必要があります。
@@ -155,21 +155,21 @@ Azure Machine Learning チームは、お客様がモデルの意図した目的
 モデルのトレーニングとスコア付けが完了したら、そのモデルを Web サービスとして展開して、プログラムによって操作することができます。Web サービスとして展開する前に、実験を効率化する必要があります。これには、トレーニングを行ったモデルからの新しい実験の作成、不要なモジュールの削除、および Web サービスの入力および出力モジュールの追加が含まれます。幸運にも、ML Studio がこれらすべての処理を実行してくれます。
 1.	[RUN] ボタンをクリックして、モデルをもう一度実行します。
 2.	画面の最下部にある [SET UP WEB SERVICE] ボタンをクリックして、表示されるメニューで [Predictive Web Service [Recommended]] を選択します。このオプションが灰色表示になっている場合は、[RUN] ボタンをクリックして再試行します。
-![37]()
+![37](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/37.png)
 予測 Web サービスの作成
 3.	ML Studio が数秒間処理を行い、その後に予測実験が表示されます。[Split Data] と [Train Model] がなくなって、そのすべてのトレーニング データが [Score Model] に流れています。さらに、最上部と最下部に、Web サービスの入力と出力が追加されています。
 元のモデルが消えてしまったと心配する必要はありません。元のモデルは残っています。ページの最上部にある [Training experiment] タブをクリックすると、元のモデルを表示できます。
-![38]()
+![38](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/38.png)
 予測実験
 4.	予測分析を実行するために呼び出すことができる Web サービスを作成するには、[RUN] をもう一度クリックします。処理が完了したら、[DEPLOY WEB SERVICE] ボタンをクリックして、Web サービスを展開します。
-![39]()
+![39](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/39.png)
 Web サービスの展開
 5.	すぐに、新しい Web サービスのダッシュボードが表示されます。このダッシュボードには、Web サービスをテストするためにクリックできる [Test] ボタンが含まれています (ここでは、ピクセル パターンを表す 0 ～ 16 の 64 個の値を入力する必要があるため、あまり実用的ではありません)。また、アプリでサービスに対する認証済み呼び出しを行うときに使用できる API キーも含まれています。この API キーは、次の演習で使用します。
 便宜上、API の右にあるボタンをクリックして、キーをクリップボードにコピーし、テキスト エディターに貼り付けておくと、後で簡単に取得できます。
-![40]()
+![40](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/40.png)
 API キーのコピー
 6.	[Consume] をクリックして、REST を使用した HTTPS 経由での Web サービスの呼び出しに関する有用な情報を表示します。
-![41]()
+![41](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/41.png)
 [Request/Response] の情報の表示
 7.	このページには、以下のような、Web サービスを利用するアプリを作成する必要のあるプログラマーに有用なドキュメントが提供されます。
 o	HTTPS 要求のフォーマットの方法
@@ -177,7 +177,7 @@ o	HTTPS 応答のフォーマットの方法
 o	入力および出力パラメーター
 o	Web サービスを呼び出す方法を示したサンプル コード
 ページの最下部までスクロールすると、サンプル コードが表示されています。これは、C#、Python、および R の 3 つの言語で利用できます。[C#] を選択して、Web サービスの URL を client.BaseAddress に割り当てるステートメントを確認できるまで、下にスクロールします。次の演習で取得できるように、この URL をクリップボードにコピーして、テキスト エディターに貼り付けておきます。後で、Web サービスを呼び出すために、これと同様のコードを記述します。そのために、この URL が必要になります。
-![42]()
+![42](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/42.png)
 Web サービスの URL
 Azure ML Web サービスに関してよく聞かれるのが、コストはいくらかという質問です。現在の価格情報については、「Machine Learning の価格」ページを参照してください。
 演習 6: Electron クライアントを構築する
@@ -194,7 +194,7 @@ Node.js では、npm と呼ばれるパッケージ マネージャーを使用�
 7.	[Command Prompt] ウィンドウまたはターミナル ウィンドウで、以下のコマンドを実行し (コマンド末尾のスペースとピリオドに注意してください)、現在のディレクトリで Visual Studio Code を起動します。
 8.	code .
 9.	Visual Studio Code で、[View] メニューから [Explorer] コマンドを選択し、[Explorer] パネルを表示します。Package.json をクリックし、ファイルを開いて編集します。
-![43]()
+![43](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/43.png)
 package.json を開く
 10.	以下に示した dependencies セクションと devDependencies セクションを package.json に追加します。package.json の 2 行目からこれらの項目を挿入したい場合は、そのようにできます。
 ```
@@ -241,7 +241,7 @@ package.json を開く
 
 ```
 12.	Visual Studio Code の [Explorer] パネルで、プロジェクト ディレクトリの上にマウス カーソルを置き、[New File] ボタンをクリックして、プロジェクトに新しいファイルを追加します。ファイルに tsconfig.json という名前を付けます。
-![44]()
+![44](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/44.png)
 プロジェクトへのファイルの追加
 13.	アプリケーションを構築する方法に関する TypeScript 情報を追加するために、以下のステートメントを tsconfig.json に貼り付けます。変更内容を保存します。
 ```
@@ -568,10 +568,10 @@ Electron アプリケーションによって、Web サービスの呼び出し�
 2.	npm run electron
 別の方法として、npm start を実行できます。これによって、アプリケーションが起動し、TypeScript ファイル内の変更が確認され、変更されている場合はそれらのファイルが再コンパイルされます。このため、手動による再起動をしなくても、コードに加えた変更が実行中のアプリケーションに反映されます。
 3.	以下の図のように、マウスを使用してグリッドに「7」と描画します。その後、[Submit] ボタンをクリックします。
-![45]()
+![45](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/45.png)
 アプリのテスト
 4.	すぐに、ウィンドウの最下部にメッセージが表示され、描画した数字が示されます。数字は合っていますか。
-![46]()
+![46](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning(Node.js)/MLHOL_nodejs_img/46.png)
 Azure ML の答え
 5.	[Clear] ボタンをクリックして、グリッドをクリアし、ほかの数字をいくつか試してみます。数字によって、構築したモデルでうまく識別されるものとそうでないものがあり、描かれた数字がグリッドを埋め尽くす面積が大きいほど結果がよいことがわかるでしょう。
 間違った答えは、モデルのトレーニングに使用したデータセットが比較的小規模であった結果というものもあれば (データセットは約 0.5 MB でしたが、ビッグデータの標準としては、小規模です)、画面上のグリッドの表示では、モデルのトレーニングに使用したスキャンの解像度の 1/16 しか使用されないという事実によるものもあります。それでもなお、アプリでこのような方法で基本的な OCR を実行できるというのは、快挙ともいえるでしょう。また、手間のかかる作業を Azure Machine Learning に肩代わりさせることでこのようなアプリを構築できるということもおわかりいただけると思います。
