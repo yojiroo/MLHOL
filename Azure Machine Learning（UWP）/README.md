@@ -185,23 +185,23 @@ Azure ML Web サービスに関してよく聞かれるのが、コストはい�
 Azure ML モデルを Web サービスとして展開する理由は、そうすることによってモデルを利用するスマート アプリを構築できることにあります。そのようなアプリを構築する方法はいろいろあります。たとえば、JavaScript や AJAX を使用して Web アプリから Web サービスを呼び出すことができます。あるいは、Visual Studio を使用して、iOS、Android、または Windows で動作し、.NET の HttpClient クラスを使用して Web サービスを呼び出す Xamarin アプリを作成することもできます。
 この演習では、ユニバーサル Windows プラットフォーム (UWP) を対象とするクライアント アプリを作成します。このアプリの利点は、PC、タブレット、スマートフォン、そして Xbox One まで含めた、さまざまな Windows デバイスで動作することです。作成したアプリを使用すると、画面上のグリッド内に数字を描画できるようになります。そうすれば、アプリによって ML Web サービスが呼び出され、描画した数字が伝えられます。
 1.	Windows 10 PC で UMP アプリを構築して実行するには、デバイスで開発者モードを有効にする必要があります。開発者モードが有効になっていることを確認するには、デスクトップの左下隅にある Windows ボタン (スタート ボタンともいいます) をクリックします。メニューから [Settings] を選択して、[Settings] ダイアログで [Update & security] をクリックします。以下に示すように、左側の [For developers] をクリックして、右側の [Developer mode] をクリックします。
-![1]()
+![1](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/1.png)
 Windows 10 での開発者モードの有効化
 2.	Visual Studio 2015 を起動して、[File]、[New]、[Project] コマンドの順に進み、"MLClient" という名前の新しい空のアプリケーション (ユニバーサル Windows) プロジェクトを作成します。
-![2]()
+![2](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/2.png)
 新しい UWP プロジェクトの作成
 3.	[OK] をクリックして、既定のターゲット バージョンと最小バージョンを受け入れます。
-![3]()
+![3](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/3.png)
 UWP のバージョンの選択
 4.	[Solution Explorer] ウィンドウで、MLClient プロジェクトを右クリックし、[Manage NuGet Packages...] を選択します。
-![4]()
+![4](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/4.png)
 プロジェクトの NuGet パッケージの管理
 NuGet は、Microsoft 管理プラットフォーム向けの無料のオープンソース パッケージです。NuGet では、さまざまなタスクを実行するコードが収録された数千ものライブラリ、つまりパッケージを利用できます。NuGet は Visual Studio 2015 に統合されているため、簡単に NuGet をプロジェクトに追加して、コードを記述せずに多くのタスクを実行できます。
 5.	[Browse] をクリックします。検索ボックスに、「webapi.client」と入力します (かぎかっこは付けません)。Microsoft.AspNet.WebApi.Client をクリックして、NuGet からこの Web API クライアント パッケージを選択します。最後に、[Install] をクリックして、最新の安定バージョンのパッケージをインストールします。このパッケージには、アプリで Web サービスとの通信に使用する ヘルパー API が収録されています。変更の確認を求められたら [OK] をクリックし、ダウンロードしたパッケージのライセンスへの同意を求められたら [I Accept] をクリックします。
-![5]()
+![5](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/5.png)
 Web API クライアントのインストール
 6.	[Solution Explorer] ウィンドウで、MLClient プロジェクトを右クリックし、[Add]、[Class] の順に選択して、プロジェクトにクラスを追加します。表示されるダイアログで、[Name] ボックスに「StringTable.cs」と入力して (かぎかっこは付けません)、[Add] をクリックします。
-![6]()
+![6](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/6.png)
 StringTable クラスの追加
 以下のように StringTable クラスを実装します。
 ```
@@ -212,7 +212,7 @@ class StringTable
 }
 ```
 MainPage.xaml を開き、以下に示した図で強調表示されている空の Grid 要素を見つけます。
-![7]()
+![7](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/7.png)
 空の Grid 要素
 空の Grid を次のマークアップに置き換えます。
 ```
@@ -428,23 +428,23 @@ o	MLSubmitAsync は、精巧に機能します。MLSubmitAsync は、UWP の Htt
 8.	挿入したソース コードで、api_key を、演習 5 のステップ 5 で取得した Web サービス用の API キーに置き換えます。
 9.	次に、web_service_url を、演習 5 のステップ 7 で取得した Web サービスの URL に置き換えます。
 10.	[Visual Studio] ウィンドウの上部にある [Build] メニューに移動し、[Build Solution] コマンドを使用して、ソリューションをビルドします。報告されたビルド エラーがある場合はそれを修正してから、Ctrl + F5 キーを押して、アプリを起動します。次のように表示されることを確認します。
-![8]()
+![8](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/8.png)
 MLClient アプリ
 おつかれさまでした。以上で、Azure Machine Learning を利用してインテリジェンスを実現するユニバーサル Windows アプリの完成です。最後のタスクでは、アプリケーションを実際に実行して、高度な処理能力を確認します。
 演習 7: モデルをテストする
 MLClient によって、Web サービスの呼び出しにグラフィカル フロントエンドが追加されます。グリッドのスクエアの上に指、ペン、またはマウスをドラッグすることによって、グリッド内に数字を描画します。[Submit] ボタンをクリックすると、64 個の値の配列が作成され (1 つのスクエアに 1 つの値、トレーニング データベースの 64 のフィーチャー列それぞれに 1 つの値)、その配列が JSON にシリアル化されて、Web サービスに渡されます。戻された JSON がアプリによって逆シリアル化され、結果が表示されます。基本的に MLClient クライアントは、ML モデルの正確性を測るための高度に視覚的な方法を提供します。
 1.	以下の図のように、マウスを使用してグリッドに「7」と描画します。その後、[Submit] ボタンをクリックします。
-![9]()
+![9](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/9.png)
 アプリのテスト
 2.	すぐに、ポップアップ ウィンドウが表示され、描画した数字が示されます。数字は合っていますか。
-![10]()
+![10](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/10.png)
 3.	[Clear] ボタンをクリックして、グリッドをクリアし、ほかの数字をいくつか試してみます。数字によって、構築したモデルでうまく識別されるものとそうでないものがあり、描かれた数字がグリッドを埋め尽くす面積が大きいほど結果がよいことがわかるでしょう。
 間違った答えは、一部にはモデルのトレーニングに使用したデータセットが比較的小規模であった結果というものもあれば (データセットは約 0.5 MB でしたが、ビッグデータの標準としては、小規模です)、画面上のグリッドの MLClient の表示では、モデルのトレーニングに使用したスキャンの解像度の 1/16 しか使用されないという事実によるものもあります。それでもなお、アプリでこのような方法で基本的な OCR を実行できるというのは、快挙ともいえるでしょう。また、手間のかかる作業を Azure Machine Learning に肩代わりさせることでこのようなアプリを構築できるということもおわかりいただけると思います。
 4.	ユニバーサル Windows プラットフォームの利点の 1 つが、アプリをさまざまなデバイスで実行できることであるのを思い出してください。MLClient がタブレットでどのように表示されるかを確認するには、メニュー バーの下のデバイスのドロップダウン リストから [Simulator] を選択します。
-![11]()
+![11](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/11.png)
 ローカル コンピューターから Windows Simulator への切り替え
 5.	Ctrl + F5 を押して、シミュレーターでアプリを起動します。
-![12]()
+![12](https://github.com/yojiroo/MLHOL/blob/master/Azure%20Machine%20Learning%EF%BC%88UWP%EF%BC%89/MLHOL_UWP_img/12.png)
 タブレットでの MLClient
 通常、開発者は、異なるデバイスで UWP アプリを表示する方法を最適化するために追加の作業を少し行います。この作業については、このラボの範囲を超えていますが、作業やビジネスで UWP アプリを使用する計画がある場合は、認識しておくべき点でもあります。広範囲にわたるデバイスで UMP アプリの表示を最適にするための適応型レイアウト使用の詳細については、このビデオをご覧ください。
 まとめ
