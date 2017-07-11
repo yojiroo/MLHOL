@@ -36,16 +36,16 @@ Azure サービスには、任意のデバイスで実行される任意のオ�
 ## 演習 2: Azure ポータルにアクセスし、サブスクリプション情報を表示する
 この演習では、Azure ポータルにログインし、自分のアカウントに関連付けられたサブスクリプションの表示方法を学びます。
 1. VM のデスクトップ下部のタスク バーにある [Edge] アイコンをクリックして、Microsoft Edge を開きます。
-![1](https://github.com/yojiroo/MLHOL/blob/master/introduction_img/1.png)
+![1](https://github.com/yojiroo/MLHOL/blob/master/introduction/introduction_img/1.png)
 2. ブラウザーのアドレス バーに「portal.azure.com」 (かぎかっこは付けません) と入力して、Azure ポータルに移動します。
 3. ログインすることを求められたら、[Azure Credentials] の画面右側にある [Content] タブに表示されているユーザー名とパスワードを入力します。それから、[Sign In] ボタンをクリックします。
-![2](https://github.com/yojiroo/MLHOL/blob/master/introduction_img/2.png)
+![2](https://github.com/yojiroo/MLHOL/blob/master/introduction/introduction_img/2.png)
 Azure ポータルにログインする
 4. ページの左側のリボンにある [課金] をクリックします。
-![3](https://github.com/yojiroo/MLHOL/blob/master/introduction_img/3.png)
+![3](https://github.com/yojiroo/MLHOL/blob/master/introduction/introduction_img/3.png)
 Azure サブスクリプションを表示する
 5. 自分のアカウントに関連付けられたサブスクリプションのリストに [Azure Pass] が表示されていることと、そのサブスクリプションの状態が [Active] であることを確認します。
-![4](https://github.com/yojiroo/MLHOL/blob/master/introduction_img/4.png)
+![4](https://github.com/yojiroo/MLHOL/blob/master/introduction/introduction_img/4.png)
 あなたの Azure Pass サブスクリプション
 サブスクリプションをクリックすると、そのサブスクリプションの請求と使用状況についての情報を取得できます。ただし、この Azure Pass サブスクリプションはまだ新しく、現在使用可能なデータはありません。再度この場所に戻り、自分の Azure Pass で使用できる請求および使用状況の情報があるかどうかを確認するためにメモしておきます。
 
